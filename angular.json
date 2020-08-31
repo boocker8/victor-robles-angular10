@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "victor-robles-angular10"
+    }
+  },
+  "defaultProject": "victor-robles-angular10",
+  "cli": {
+    "analytics": "3dfca3cd-91b4-4dcc-91b8-a93f2cfc11ad"
+  }
 }
