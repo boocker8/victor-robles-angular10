@@ -4,19 +4,24 @@
         background: yellowgreen;
     }
 </style>
-
-
 {{ title }}
-
+<br><br>
 <nav>
     <a [routerLink]="['/home']" [routerLinkActive]="['activo']">
     Home
-  </a> -
+  </a> --
     <a [routerLink]="['/emp']" [routerLinkActive]="['activo']">
     Empleado
-  </a> -
+  </a> --
     <a [routerLink]="['/con']" [routerLinkActive]="['activo']">
     Contacto
-  </a> -
+  </a>--
+    <a [routerLink]="['/coches']" [routerLinkActive]="['activo']">
+    Coches
+  </a>--
+    <a [routerLink]="['/productos']" [routerLinkActive]="['activo']">
+    Productos
+  </a>
+    <ng-container></ng-container>
 </nav>
 <router-outlet></router-outlet>
