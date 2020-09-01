@@ -16,10 +16,13 @@ export class ProductoService {
     this.url = "https://jsonplaceholder.typicode.com/posts"
   }
   /**
-   * name
+   *     getAPIServiceProductos()
    */
-    getProductos(): Observable<any>{
+    getAPIServiceProductos(): Observable<any>{
+      console.log("***** getAPIServiceProductos *****");
       return this._httpClient.get<HttpResponse<Object>>(this.url, {observe: 'response'});
   }
 
+  //postAPIServiceProductos(): Observable<any>{
+ // }
 }
