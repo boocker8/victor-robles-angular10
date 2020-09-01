@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Producto } from '../models/producto';
 
@@ -11,7 +11,7 @@ export class ProductoService {
   public url:string;
 
   constructor(
-    private httpClient: HttpClient
+    private _httpClient: HttpClient
     ) {
     this.url = "https://jsonplaceholder.typicode.com/posts"
   }
@@ -19,8 +19,7 @@ export class ProductoService {
    * name
    */
     getProductos(): Observable<any>{
-      return this.httpClient.get(this.url);
-
+      return this._httpClient.get<HttpResponse<Object>>(this.url, {observe: 'response'});
   }
 
 }

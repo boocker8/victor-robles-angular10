@@ -15,8 +15,8 @@
 <div style="">
     <h4>Listado de Coches</h4>
     <ul>
-        <li *ngFor="let x of coches">
-            {{ x.nombre }} - {{ x.caballaje}} - {{x.color}}
+        <li *ngFor="let index of coches">
+            {{ index.nombre }} - {{ index.caballaje}} - {{index.color}}
         </li>
     </ul>
 </div>

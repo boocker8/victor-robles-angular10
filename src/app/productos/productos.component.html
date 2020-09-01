@@ -1,0 +1,6 @@
+<br> {{ title }}
+<ul>
+    <li *ngFor="let item of productos; let i=index">
+        {{ item.userId }} -- {{ item.id }} -- {{ item.title }} -- {{ item.body }}
+    </li>
+</ul>

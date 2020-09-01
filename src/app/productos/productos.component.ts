@@ -12,30 +12,33 @@ import { ProductoService } from "../services/productos.service";
 })
 export class ProductosComponent implements OnInit {
 
+  title = ' **************** ContactoComponent ****************';
 
+  public productos:any;
 
   constructor(
     public _productoService:ProductoService
-  ) { }
+  ) {  }
 
-  ngOnInit(): void {
-    console.log("** Invocando a _productoService.getProductos() **");
-    this._productoService.getProductos().subscribe(
-      result => {
+  ngOnInit(): void { console.log("** Invocando a _productoService.getProductos() **");
+  this._productoService.getProductos().subscribe(
+    result => {
+      if(result.status != 200){
+        console.log("Error: ProductosComponent");
+        console.log(result.status);
 
-          if(result.code != 200){
-              console.log(result);
-          }else{
-              console.log(result.data);
-          }
-
-      },
-      error => {
-          console.log(<any>error);
+      }else{
+        this.productos = result.body;
+        console.log(result);
+        console.log(result.status);
+        console.log(this.productos);
       }
-  );
 
-  }
+    },
+    error => {
+        console.log(<any>error);
+    }
+);  }
 
 
 }
